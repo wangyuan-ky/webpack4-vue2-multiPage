@@ -67,6 +67,7 @@ module.exports = webpackMerge(webpackBase, {
       }
     ]
   },
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: config.devServerOutputPath,
     overlay: {

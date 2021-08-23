@@ -15,7 +15,6 @@ module.exports = {
     "sourceType": "module",
   },
   "rules": {
-    // "comma-dangle": ["warn", "always-multiline"],
     "indent": ["warn", 2],
     "linebreak-style": ["warn", "unix"],
     "quotes": ["warn", "single"],

@@ -22,7 +22,7 @@ config.HTMLDirs.forEach(item => {
 
 const env = process.env.BUILD_MODE.trim();
 let ASSET_PATH = '/'; // dev 环境
-if (env === 'prod') ASSET_PATH = '//abc.com/static/'; // build 时设置成实际使用的静态服务地址
+if (env === 'prod') ASSET_PATH = ''; // build 时设置成实际使用的静态服务地址
 
 module.exports = {
   entry: Entries,
@@ -61,11 +61,12 @@ module.exports = {
       {
         from: path.resolve(__dirname, '../public'),
         to: path.resolve(__dirname, '../dist'),
-        ignore: ['*.html']
+        ignore: ['*.html', '.gitkeep']
       },
       {
         from: path.resolve(__dirname, '../src/scripts/lib'),
-        to: path.resolve(__dirname, '../dist')
+        to: path.resolve(__dirname, '../dist'),
+        ignore: ['.gitkeep']
       }
     ]),
     ...HTMLPlugins, // 利用 HTMLWebpackPlugin 插件合成最终页面
